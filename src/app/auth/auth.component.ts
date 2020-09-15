@@ -52,4 +52,8 @@ export class AuthComponent {
             this.isLoading = false;
         });
     }
+
+    onHandleError() {
+        this.error = null;
+    }
 }
