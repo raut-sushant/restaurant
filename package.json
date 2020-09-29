@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run restaurant:serve-ssr",
+    "serve:ssr": "node dist/restaurant/server/main.js",
+    "build:ssr": "ng build --prod && ng run restaurant:server:production",
+    "prerender": "ng run restaurant:prerender"
   },
   "private": true,
   "dependencies": {
@@ -18,11 +22,16 @@
     "@angular/forms": "~10.0.11",
     "@angular/platform-browser": "~10.0.11",
     "@angular/platform-browser-dynamic": "~10.0.11",
+    "@angular/platform-server": "~10.0.11",
     "@angular/router": "~10.0.11",
+    "@nestjs/ng-universal": "^4.0.1",
     "@ngrx/effects": "^10.0.0",
     "@ngrx/router-store": "^10.0.0",
     "@ngrx/store": "^10.0.0",
+    "@nguniversal/express-engine": "^10.0.2",
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
     "bootstrap": "^3.4.1",
+    "express": "^4.15.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -32,6 +41,8 @@
     "@angular/cli": "~10.0.7",
     "@angular/compiler-cli": "~10.0.11",
     "@ngrx/store-devtools": "^10.0.0",
+    "@nguniversal/builders": "^10.0.2",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
